@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 
 const HeaderTabs = () => {
-  const [activeTab, setActiveTab] = React.useState("Delivery");
+  const [activeTab, setActiveTab] = useState("Delivery");
   return (
     <View style={{ flexDirection: "row", alignSelf: "center" }}>
       <HeaderButtons
