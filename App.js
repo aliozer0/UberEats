@@ -19,6 +19,7 @@ export default function App() {
         }}
       >
         <Tab.Screen
+          headerShown={false}
           name="Home"
           component={Home}
           options={{
