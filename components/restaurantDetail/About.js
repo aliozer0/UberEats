@@ -19,12 +19,12 @@ const About = (props) => {
 
   const description = `${formattedCategories} ${
     price ? " • " + price : ""
-  } • 🎫 • ${rating} ⭐ (${reviews}+)`; 
+  } • 🎫 • ${rating} ⭐ (${reviews}+)`;
 
   return (
     <View>
       <RestaurantImage image={image} />
-      <RestaurantName title={name} />
+      <RestaurantName name={name} />
       <RestaurntDescription description={description} />
     </View>
   );
@@ -41,7 +41,7 @@ const RestaurantName = (props) => (
       marginHorizontal: 15,
     }}
   >
-    {props.title}
+    {props.name}
   </Text>
 );
 const RestaurntDescription = (props) => (

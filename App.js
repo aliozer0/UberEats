@@ -5,7 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 const Tab = createBottomTabNavigator();
 import { Ionicons, AntDesign } from "@expo/vector-icons";
-import Search from "./screens/Search";
+
 import RestaurantDetail from "./screens/RestaurantDetail";
 import RootNavigation from "./navigation";
 
