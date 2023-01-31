@@ -1,15 +1,17 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
-import HeaderTabs from "../components/HeaderTabs";
-import SearchBar from "../components/SearchBar";
-import Categories from "../components/Categories";
-import RestaurantItem, { localRestaurants } from "../components/RestaurantItem";
-import BottomTabs from "../components/BottomTabs";
+import HeaderTabs from "../components/Home/HeaderTabs";
+import SearchBar from "../components/Home/SearchBar";
+import Categories from "../components/Home/Categories";
+import RestaurantItem, {
+  localRestaurants,
+} from "../components/Home/RestaurantItem";
+import BottomTabs from "../components/Home/BottomTabs";
 import { Divider } from "react-native-elements";
 
 const YELP_API_KEY =
   "L5-rbY6_u4IqRcC7W4TKDVs6ifdL9K_9Ls1vf4e0qbDWTvxtBDo_-Z2grRnGKMyUL4Gu0jvfWNGF_6ogR7GbpqqQJqy_KOyCIPHNgnjCRhtOYwzdnJzBfDCpy-zUY3Yx";
-const Home = () => {
+const Home = ({ navigation }) => {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
   const [city, setCity] = useState("new york");
 
@@ -40,7 +42,11 @@ const Home = () => {
       </View>
       <ScrollView showsHorizontalScrollIndicator={false}>
         <Categories />
-        <RestaurantItem restaurantData={restaurantData} cityHandler={setCity} />
+        <RestaurantItem
+          restaurantData={restaurantData}
+          cityHandler={setCity}
+          navigation={navigation}
+        />
       </ScrollView>
       <Divider width={1} />
       <BottomTabs />

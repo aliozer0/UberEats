@@ -32,19 +32,32 @@ export const localRestaurants = [
   },
 ];
 
-const RestaurantItem = (props) => {
+const RestaurantItem = ({ navigation, ...props }) => {
   return (
-    <TouchableOpacity
-      style={{ marginBottom: 30, padding: 10 }}
-      activeOpacity={0.5}
-    >
+    <>
       {props.restaurantData.map((restaurant, index) => (
-        <View key={index} style={{ marginTop: 10, backgroundColor: "white" }}>
-          <RestaurantImage image={restaurant.image_url} />
-          <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
-        </View>
+        <TouchableOpacity
+          style={{ marginBottom: 20 }}
+          activeOpacity={1}
+          key={index}
+          onPress={() =>
+            navigation.navigate("RestaurantDetail", {
+              name: restaurant.name,
+              image: restaurant.image_url,
+              price: restaurant.price,
+              reviews: restaurant.review_count,
+              rating: restaurant.rating,
+              categories: restaurant.categories,
+            })
+          }
+        >
+          <View key={index} style={{ marginTop: 10, backgroundColor: "white" }}>
+            <RestaurantImage image={restaurant.image_url} />
+            <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
+          </View>
+        </TouchableOpacity>
       ))}
-    </TouchableOpacity>
+    </>
   );
 };
 const RestaurantImage = (props) => (
