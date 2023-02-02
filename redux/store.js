@@ -1,7 +1,7 @@
 import reducers from "./reducers/index";
-import { configureStore } from "redux";
+import { createStore } from "redux";
 
 export default function configureStore(initialState) {
-  const store = configureStore(reducers, initialState);
+  const store = createStore(reducers, initialState);
   return store;
 }

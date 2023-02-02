@@ -8,7 +8,6 @@ import { Provider as ReduxProvider } from "react-redux";
 import configureStore from "./redux/store";
 
 const store = configureStore();
-
 export default function RootNavigation() {
   const Stack = createStackNavigator();
   const screenOptions = { headerShown: false };

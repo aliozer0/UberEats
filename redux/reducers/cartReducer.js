@@ -5,7 +5,7 @@ let cartReducer = (state = defaultState, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
       {
-        const newState = { ...state };
+        let newState = { ...state };
         newState.selecedItems = {
           items: [...newState.selecedItems.items, action.payload],
           restaurantName: action.payload.restaurantName,
@@ -19,3 +19,5 @@ let cartReducer = (state = defaultState, action) => {
       return state;
   }
 };
+
+export default cartReducer;
