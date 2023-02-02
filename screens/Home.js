@@ -35,7 +35,7 @@ const Home = ({ navigation }) => {
     getRestaurantFromYelp();
   }, [city, activeTab]);
   return (
-    <SafeAreaView style={{ backgroundColor: "#eee" }}>
+    <SafeAreaView style={{ backgroundColor: "#eee", flex: 1 }}>
       <View style={{ backgroundColor: "white", padding: 15 }}>
         <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <SearchBar cityHandler={setCity} />
