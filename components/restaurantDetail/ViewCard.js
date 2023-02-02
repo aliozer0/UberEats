@@ -3,11 +3,17 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export default function ViewCard() {
-  const items = useSelector((state) => state.cartReducer.selecedItems.items);
+
+
+  const { items, restaurantName } = useSelector(
+    (state) => state.cartReducer.selecedItems
+  );
+
   const total = items
     .map((item) => Number(item.price.replace("$", "")))
     .reduce((prev, curr) => prev + curr, 0);
-  const totalUSD = total.toLocaleString("en-US", {
+    
+  const totalUSD = total.toLocaleString("en", {
     style: "currency",
     currency: "USD",
   });

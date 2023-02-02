@@ -30,6 +30,7 @@ const foods = [
 
 export default function MenuItem({ restaurantName }) {
   const dispacth = useDispatch();
+
   const selectItem = (item, checkboxValue) => {
     dispacth({
       type: "ADD_TO_CART",
@@ -40,6 +41,7 @@ export default function MenuItem({ restaurantName }) {
       },
     });
   };
+  
   const cartItems = useSelector(
     (state) => state.cartReducer.selecedItems.items
   );
