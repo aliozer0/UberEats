@@ -1,9 +1,9 @@
-import { View, Text, TouchableOpacity } from "react-native";
-import React from "react";
+import { View, Text, TouchableOpacity, Modal } from "react-native";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function ViewCard() {
-
+  const [modalVisible, setModalVisible] = useState(false);
 
   const { items, restaurantName } = useSelector(
     (state) => state.cartReducer.selecedItems
@@ -12,15 +12,49 @@ export default function ViewCard() {
   const total = items
     .map((item) => Number(item.price.replace("$", "")))
     .reduce((prev, curr) => prev + curr, 0);
-    
+
   const totalUSD = total.toLocaleString("en", {
     style: "currency",
     currency: "USD",
   });
   console.log(totalUSD);
 
+  const checkoutModalContent = () => {
+    return (
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 30,
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: "black",
+            padding: 10,
+            borderRadius: 30,
+            width: 150,
+            alignItems: "center",
+          }}
+        >
+          <TouchableOpacity onPress={() => setModalVisible(false)}>
+            <Text style={{ color: "white" }}>Checkout</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  };
   return (
     <>
+      <Modal
+        animationType="slide"
+        visible={modalVisible}
+        transparent={true}
+        onRequestClose={() => setModalVisible(false)}
+      >
+        {checkoutModalContent()}
+      </Modal>
       {total ? (
         <View
           style={{
@@ -53,6 +87,7 @@ export default function ViewCard() {
                 position: "relative",
                 padding: 15,
               }}
+              onPress={() => setModalVisible(true)}
             >
               <Text style={{ color: "white", fontSize: 20, marginRight: 30 }}>
                 View Cart

@@ -51,7 +51,7 @@ const RestaurantItem = ({ navigation, ...props }) => {
             })
           }
         >
-          <View key={index} style={{ marginTop: 10, backgroundColor: "white" }}>
+          <View key={index} style={{ marginTop: 10, backgroundColor: "white",padding:5 }}>
             <RestaurantImage image={restaurant.image_url} />
             <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
           </View>
