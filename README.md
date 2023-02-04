@@ -2,4 +2,4 @@
 
 UberEats React-Native App
 
-![UberEats]("./img/UberEats1.png")
+<img src="/img/UberEats1" height="400" alt="Screenshot"/>
