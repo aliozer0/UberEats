@@ -37,7 +37,7 @@ const RestaurantItem = ({ navigation, ...props }) => {
     <>
       {props.restaurantData.map((restaurant, index) => (
         <TouchableOpacity
-          style={{ marginBottom: 20 }}
+          style={{ marginBottom: 10 }}
           activeOpacity={1}
           key={index}
           onPress={() =>
@@ -51,7 +51,7 @@ const RestaurantItem = ({ navigation, ...props }) => {
             })
           }
         >
-          <View key={index} style={{ marginTop: 10, backgroundColor: "white",padding:5 }}>
+          <View key={index} style={{ marginTop: 10, backgroundColor: "white",padding:10 }}>
             <RestaurantImage image={restaurant.image_url} />
             <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
           </View>

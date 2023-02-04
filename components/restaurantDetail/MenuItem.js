@@ -4,29 +4,6 @@ import { ScrollView } from "react-native-gesture-handler";
 import { Divider } from "react-native-elements";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { useDispatch, useSelector } from "react-redux";
-const foods = [
-  {
-    title: "Lasagna",
-    description: "With buttery lettuce ,tomate and sauce bechamel",
-    price: "$13.50",
-    image:
-      "https://static.onecms.io/wp-content/uploads/sites/9/2020/04/24/ppp-why-wont-anyone-rescue-restaurants-FT-BLOG0420.jpg",
-  },
-  {
-    title: "Lasagna",
-    description: "With buttery lettuce ,tomate and sauce bechamel",
-    price: "$13.50",
-    image:
-      "https://static.onecms.io/wp-content/uploads/sites/9/2020/04/24/ppp-why-wont-anyone-rescue-restaurants-FT-BLOG0420.jpg",
-  },
-  {
-    title: "Lasagna",
-    description: "With buttery lettuce ,tomate and sauce bechamefsdfsdfl",
-    price: "$13.50",
-    image:
-      "https://static.onecms.io/wp-content/uploads/sites/9/2020/04/24/ppp-why-wont-anyone-rescue-restaurants-FT-BLOG0420.jpg",
-  },
-];
 
 export default function MenuItem({
   restaurantName,
